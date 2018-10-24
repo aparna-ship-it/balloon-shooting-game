@@ -190,7 +190,7 @@ int main(void)
 			ch = getch();
 			if(ch == 'w')
 			{
-				for(k=0;k>=-20;k-=3)
+				for(k=0;k>=-40;k-=4)
 				{
 					clearviewport();
 					setbkcolor(3);
