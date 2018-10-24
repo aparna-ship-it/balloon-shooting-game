@@ -4,6 +4,28 @@
 #include <conio.h>
 #include <dos.h>
 
+float octave[7] = { 130.81, 146.83, 164.81, 174.61, 196, 220, 246.94};
+
+void start()
+{
+	setcolor(1);
+
+	setbkcolor(14);
+	settextstyle(7,0,0);
+	outtextxy(10,400,"  PRESS ANY KEY TO CONTINUE....");
+	settextstyle(1,0,0);
+	setcolor(4);
+	setusercharsize(25,15,20,4);
+	outtextxy(85,120,"DINO JUMP GAME");
+	while( !kbhit() )
+	{
+		sound( octave[ random(7) ]*4 );
+		delay(300);
+	}
+	nosound();
+	getch();
+}
+
 void cloud(int x,int y)
 {
 	arc(x, y, 90, 180, 8);
@@ -155,7 +177,31 @@ int main(void)
 	   getch();
 	   exit(1);             /* return with error code */
 	}
+
+	start();
+
 	settextstyle(10,0,2);
+
+	setbkcolor(3);
+	outtextxy(10,10,"LEVEL  : ");
+	outtextxy(10,40,"POINTS : ");
+	setcolor(WHITE);
+	dino(0,0,0);
+	rectangle(-1,400,700,500);
+	setfillstyle(1,2);
+	floodfill(0,402,WHITE);
+	obstacle(1000);
+	cloud(100,100);
+	cloud(200,200);
+	cloud(300,200);
+	cloud(300,300);
+	cloud(400,100);
+	cloud(500,200);
+	cloud(500,300);
+
+	outtextxy(400,340,"PRESS ANY KEY TO START ");
+	getch();
+
 	j=4;
 	while(1)
 	{
@@ -188,10 +234,12 @@ int main(void)
 				delay(j*j*j);
 			}
 			ch = getch();
+
 			if(ch == 'w')
 			{
 				for(k=0;k>=-40;k-=4)
 				{
+					sound( octave[ random(7) ]*4 );
 					clearviewport();
 					setbkcolor(3);
 					outtextxy(10,10,"LEVEL  : ");
@@ -214,6 +262,7 @@ int main(void)
 				}
 				for(;k<=0;k+=3)
 				{
+					sound( octave[ random(7) ]*4 );
 					clearviewport();
 					setbkcolor(3);
 					outtextxy(10,10,"LEVEL  : ");
@@ -239,6 +288,7 @@ int main(void)
 			{
 				exit(0);
 			}
+			nosound();
 		}
 	}
 
