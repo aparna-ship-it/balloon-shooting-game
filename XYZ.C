@@ -4,100 +4,112 @@
 #include <conio.h>
 #include <dos.h>
 
-void dino(int i)
+void cloud(int x,int y)
+{
+	arc(x, y, 90, 180, 8);
+	arc(x+8, y-8, 90, 180, 8);
+	arc(x+16, y-16, 0, 180, 8);
+	arc(x+24, y-8, 0, 90, 8);
+	arc(x+32, y, 0, 90, 8);
+	line(x-8, y, x+40, y);
+	setfillstyle(1,15);
+	floodfill(x,y-1,WHITE);
+}
+
+void dino(int i, int x, int y)
 {
 	if(i==0)
 	{
-		line(100,400,100,385);
-		line(100,385,94,385);
-		line(94,385,94,378);
-		line(94,378,86,378);
-		line(86,378,76,368);
-		line(76,368,76,350);
-		line(76,350,80,350);
-		line(80,350,80,360);
-		line(80,360,90,365);
-		line(90,365,100,365);
-		line(100,365,120,350);
-		line(120,350,120,330);
-		line(120,330,126,330);
-		line(126,330,126,324);
-		line(126,324,150,324);
-		line(150,324,150,330);
-		line(150,330,155,330);
-		line(155,330,155,340);
-		line(155,340,140,340);
-		line(140,340,140,345);
-		line(140,345,150,345);
-		line(150,345,150,348);
-		line(150,348,138,348);
-		line(138,348,138,358);
-		line(138,358,145,358);
-		line(145,358,145,365);
-		line(145,365,141,365);
-		line(141,365,141,362);
-		line(141,362,138,362);
-		line(138,362,138,372);
-		line(138,372,124,382);
-		line(124,382,124,390);
-		line(124,390,128,390);
-		line(128,390,128,394);
-		line(128,394,120,394);
-		line(120,394,120,389);
-		line(120,389,115,387);
-		line(115,387,110,390);
-		line(110,390,110,393);
-		line(110,393,106,393);
-		line(106,393,106,396);
-		line(106,396,110,396);
-		line(110,396,110,400);
-		line(110,400,100,400);
-		setfillstyle(1,WHITE);
+		line(100+x,400+y,100+x,385+y);
+		line(100+x,385+y,94+x,385+y);
+		line(94+x,385+y,94+x,378+y);
+		line(94+x,378+y,86+x,378+y);
+		line(86+x,378+y,76+x,368+y);
+		line(76+x,368+y,76+x,350+y);
+		line(76+x,350+y,80+x,350+y);
+		line(80+x,350+y,80+x,360+y);
+		line(80+x,360+y,90+x,365+y);
+		line(90+x,365+y,100+x,365+y);
+		line(100+x,365+y,120+x,350+y);
+		line(120+x,350+y,120+x,330+y);
+		line(120+x,330+y,126+x,330+y);
+		line(126+x,330+y,126+x,324+y);
+		line(126+x,324+y,150+x,324+y);
+		line(150+x,324+y,150+x,330+y);
+		line(150+x,330+y,155+x,330+y);
+		line(155+x,330+y,155+x,340+y);
+		line(155+x,340+y,140+x,340+y);
+		line(140+x,340+y,140+x,345+y);
+		line(140+x,345+y,150+x,345+y);
+		line(150+x,345+y,150+x,348+y);
+		line(150+x,348+y,138+x,348+y);
+		line(138+x,348+y,138+x,358+y);
+		line(138+x,358+y,145+x,358+y);
+		line(145+x,358+y,145+x,365+y);
+		line(145+x,365+y,141+x,365+y);
+		line(141+x,365+y,141+x,362+y);
+		line(141+x,362+y,138+x,362+y);
+		line(138+x,362+y,138+x,372+y);
+		line(138+x,372+y,124+x,382+y);
+		line(124+x,382+y,124+x,390+y);
+		line(124+x,390+y,128+x,390+y);
+		line(128+x,390+y,128+x,394+y);
+		line(128+x,394+y,120+x,394+y);
+		line(120+x,394+y,120+x,389+y);
+		line(120+x,389+y,115+x,387+y);
+		line(115+x,387+y,110+x,390+y);
+		line(110+x,390+y,110+x,393+y);
+		line(110+x,393+y,106+x,393+y);
+		line(106+x,393+y,106+x,396+y);
+		line(106+x,396+y,110+x,396+y);
+		line(110+x,396+y,110+x,400+y);
+		line(110+x,400+y,100+x,400+y);
+		setfillstyle(1,8);
 		floodfill(77,351,WHITE);
 	}
 	else
 	{
-		line(100,395,100,385);
-		line(100,385,94,385);
-		line(94,385,94,378);
-		line(94,378,86,378);
-		line(86,378,76,368);
-		line(76,368,76,350);
-		line(76,350,80,350);
-		line(80,350,80,360);
-		line(80,360,90,365);
-		line(90,365,100,365);
-		line(100,365,120,350);
-		line(120,350,120,330);
-		line(120,330,126,330);
-		line(126,330,126,324);
-		line(126,324,150,324);
-		line(150,324,150,330);
-		line(150,330,155,330);
-		line(155,330,155,340);
-		line(155,340,140,340);
-		line(140,340,140,345);
-		line(140,345,150,345);
-		line(150,345,150,348);
-		line(150,348,138,348);
-		line(138,348,138,358);
-		line(138,358,145,358);
-		line(145,358,145,365);
-		line(145,365,141,365);
-		line(141,365,141,362);
-		line(141,362,138,362);
-		line(138,362,138,372);
-		line(138,372,124,382);
-		line(124,382,124,396);
-		line(124,396,128,396);
-		line(128,396,128,400);
-		line(128,400,120,400);
-		line(120,400,120,389);
-		line(120,389,115,387);
-		line(115,387,110,390);
-		line(110,391,110,395);
-		line(110,395,100,395);
-		setfillstyle(1,WHITE);
+		line(100+x,395+y,100+x,385+y);
+		line(100+x,385+y,94+x,385+y);
+		line(94+x,385+y,94+x,378+y);
+		line(94+x,378+y,86+x,378+y);
+		line(86+x,378+y,76+x,368+y);
+		line(76+x,368+y,76+x,350+y);
+		line(76+x,350+y,80+x,350+y);
+		line(80+x,350+y,80+x,360+y);
+		line(80+x,360+y,90+x,365+y);
+		line(90+x,365+y,100+x,365+y);
+		line(100+x,365+y,120+x,350+y);
+		line(120+x,350+y,120+x,330+y);
+		line(120+x,330+y,126+x,330+y);
+		line(126+x,330+y,126+x,324+y);
+		line(126+x,324+y,150+x,324+y);
+		line(150+x,324+y,150+x,330+y);
+		line(150+x,330+y,155+x,330+y);
+		line(155+x,330+y,155+x,340+y);
+		line(155+x,340+y,140+x,340+y);
+		line(140+x,340+y,140+x,345+y);
+		line(140+x,345+y,150+x,345+y);
+		line(150+x,345+y,150+x,348+y);
+		line(150+x,348+y,138+x,348+y);
+		line(138+x,348+y,138+x,358+y);
+		line(138+x,358+y,145+x,358+y);
+		line(145+x,358+y,145+x,365+y);
+		line(145+x,365+y,141+x,365+y);
+		line(141+x,365+y,141+x,362+y);
+		line(141+x,362+y,138+x,362+y);
+		line(138+x,362+y,138+x,372+y);
+		line(138+x,372+y,124+x,382+y);
+		line(124+x,382+y,124+x,396+y);
+		line(124+x,396+y,128+x,396+y);
+		line(128+x,396+y,128+x,400+y);
+		line(128+x,400+y,120+x,400+y);
+		line(120+x,400+y,120+x,389+y);
+		line(120+x,389+y,115+x,387+y);
+		line(115+x,387+y,110+x,390+y);
+		line(110+x,391+y,110+x,395+y);
+		line(110+x,395+y,100+x,395+y);
+		setfillstyle(1,8);
 		floodfill(77,351,WHITE);
 	}
 
@@ -106,7 +118,7 @@ void dino(int i)
 void obstacle(int x)
 {
 	rectangle(x,374,x+10,400);
-	setfillstyle(1,WHITE);
+	setfillstyle(1,6);
 	floodfill(x+1,375,WHITE);
 
 	rectangle(x-10,378,x,382);
@@ -125,8 +137,9 @@ void obstacle(int x)
 
 int main(void)
 {
-	int i,j;
-       /* request auto detection */
+	int i,j,x=0,y=0,k=0;
+	char ch;
+	/* request auto detection */
 	int gdriver = DETECT, gmode, errorcode;
 
    /* initialize graphics mode */
@@ -142,28 +155,91 @@ int main(void)
 	   getch();
 	   exit(1);             /* return with error code */
 	}
-	//initwindow(1024,768,"xyz",0,0);
 	settextstyle(10,0,2);
 	j=4;
-	while(j>0)
+	while(1)
 	{
+		x=0;
+		y=0;
 		i=500;
 		while(i>0)
 		{
 
-			clearviewport();
-			outtextxy(10,10,"LEVEL  : ");
-			outtextxy(10,40,"POINTS : ");
-			setcolor(WHITE);
-			dino(i%2);
-			rectangle(-1,400,700,500);
-			setfillstyle(1,8);
-			floodfill(0,402,WHITE);
-			obstacle(i);
-			i=i-11;
-			delay(j*j*j*j);
+			while(!kbhit())
+			{
+				clearviewport();
+				setbkcolor(3);
+				outtextxy(10,10,"LEVEL  : ");
+				outtextxy(10,40,"POINTS : ");
+				setcolor(WHITE);
+				dino(i%2,x,y);
+				rectangle(-1,400,700,500);
+				setfillstyle(1,2);
+				floodfill(0,402,WHITE);
+				obstacle(i);
+				cloud(100,100);
+				cloud(200,200);
+				cloud(300,200);
+				cloud(300,300);
+				cloud(400,100);
+				cloud(500,200);
+				cloud(500,300);
+				i=i-11;
+				delay(j*j*j);
+			}
+			ch = getch();
+			if(ch == 'w')
+			{
+				for(k=0;k>=-20;k-=3)
+				{
+					clearviewport();
+					setbkcolor(3);
+					outtextxy(10,10,"LEVEL  : ");
+					outtextxy(10,40,"POINTS : ");
+					setcolor(WHITE);
+					dino(i%2,x,k);
+					rectangle(-1,400,700,500);
+					setfillstyle(1,2);
+					floodfill(0,402,WHITE);
+					obstacle(i);
+					cloud(100,100);
+					cloud(200,200);
+					cloud(300,200);
+					cloud(300,300);
+					cloud(400,100);
+					cloud(500,200);
+					cloud(500,300);
+					i=i-11	;
+					delay(j*j*j);
+				}
+				for(;k<=0;k+=3)
+				{
+					clearviewport();
+					setbkcolor(3);
+					outtextxy(10,10,"LEVEL  : ");
+					outtextxy(10,40,"POINTS : ");
+					setcolor(WHITE);
+					dino(i%2,x,k);
+					rectangle(-1,400,700,500);
+					setfillstyle(1,2);
+					floodfill(0,402,WHITE);
+					obstacle(i);
+					cloud(100,100);
+					cloud(200,200);
+					cloud(300,200);
+					cloud(300,300);
+					cloud(400,100);
+					cloud(500,200);
+					cloud(500,300);
+					i=i-11	;
+					delay(j*j*j);
+				}
+			}
+			else if(ch == 'x')
+			{
+				exit(0);
+			}
 		}
-		j--;
 	}
 
    /* clean up */
